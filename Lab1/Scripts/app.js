@@ -110,7 +110,7 @@
         FirstParagraph.innerHTML=  `<p class="h7 mt-3 ">-------------------------------------------------------------------------------------------------<br>
                                     Maximus Vanhaarlem, 20 years old, currently enrolled at Durham College in Computer Programming for IT
                                     <br>Taught in C++, C#, Java, JavaScript, SQL, PHP, HTML, Python, COBOL. Looking to make a name for himself
-                                    <br>the world, and enjoy his life.
+                                    <br>the world, and enjoy his life, whilst being unable to take a good photo to save his life.
                                     <br><a href="./DownloadItems/MVResume.pdf" download><img src="./Images/PDFPicture.png" alt="Resume" width="60" height="60"></a></p>`;
 
         // Insert new element into the reference point
@@ -127,10 +127,18 @@
         
         sendButton.addEventListener("click", function()
         {
+            event.preventDefault();
+            console.log(fullName.value);
+            console.log(contactNumber.value);
+            console.log(emailAddress.value);
+            console.log(message.value);
             if(subscribeCheckbox.checked)
             {
                 AddContact(fullName.value, contactNumber.value, emailAddress.value);
             }
+            setTimeout(function() {
+                location.href = "index.html";
+            }, 3000);
         });
     }
 
@@ -290,6 +298,13 @@
         NavContent.childNodes[3].innerHTML=`<a class="nav-link" href="products.html"><i class="fas fa-boxes"></i> Projects</a>`
         console.log("NavContent changed");
 
+        let PageBody = document.body;
+        let FixedNavBar = document.createElement("nav");
+        FixedNavBar.setAttribute("class", "navbar fixed-bottom navbar-dark bg-dark ");
+        FixedNavBar.innerHTML = `  <div class="container-fluid">
+                                        <a class="navbar-brand" href="#">&copy Copyright 2022</a>
+                                    </div>`;
+        PageBody.append(FixedNavBar);
 
         switch(document.title)
         {
