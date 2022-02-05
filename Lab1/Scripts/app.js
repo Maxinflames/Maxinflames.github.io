@@ -18,7 +18,7 @@
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);
@@ -28,17 +28,18 @@
         console.log("Products Page");
         // Create reference to entry point for insertion/deletion
         let MainContent = document.getElementsByTagName("main")[0];
+        console.log(MainContent);
 
         // Create HTML Element in memory
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> This site displays my favourite projects that I have worked on.<br></a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);        
     }
-    
+
     function DisplayServicesPage()
     {
         console.log("Services Page");
@@ -49,7 +50,7 @@
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);
@@ -64,7 +65,7 @@
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);
@@ -232,13 +233,16 @@
 
     function Start()
     {
+        console.log("App Started!");
+
         let NavContent = document.getElementsByTagName("ul")[0];
-        console.log(NavContent);
         let HumanResourceLink = document.createElement("li");
         HumanResourceLink.innerHTML = `<a class="nav-link"><i class="fas fa-user"></i> Human Resources</a>`
         NavContent.lastElementChild.before(HumanResourceLink);
         NavContent.childNodes[3].innerHTML=`<a class="nav-link" href="products.html"><i class="fas fa-boxes"></i> Projects</a>`
-        console.log("App Started!");
+        console.log("NavContent changed");
+
+
         switch(document.title)
         {
             case "Home":
