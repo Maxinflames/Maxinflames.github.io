@@ -34,12 +34,31 @@
 
         // Create HTML Element in memory
         let MainParagraph = document.createElement("p");
+        let FirstPicture = document.createElement("div");
+        let FirstParagraph = document.createElement("p");
+        let SecondParagraph = document.createElement("p");
+        let ThirdParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> This site displays my favourite projects that I have worked on.</a>`
-       
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> This page displays my favourite projects that I have worked on.</a>`
+        FirstPicture.innerHTML = `<img src="./Images/Project.PNG" alt="This Project"  width="700" height="400">`;
+        FirstParagraph.innerHTML=  `<p class="h7 mt-3 ">This website, made using HTML, Javascript and Node has been thoroughly enjoyable, 
+                                    <br>and I have learned alot from it due to my profs enjoyable teaching style (Not trying to get 
+                                    <br>brownie points I legitimately feel this way lol).</p>`;
+        SecondParagraph.innerHTML=  `<p class="h7 mt-3 ">Another Project I enjoyed working on was my first attempt to recreate the once 
+                                    <br>very popular game "Tetris". It was a project I attempted before beginning college, and failed 
+                                    <br>disasterously, but I learned alot on how Object Oriented Programming works, and had I have had 
+                                    <br>the time, I believe I would have completed it once restarting.</p>`;
+        ThirdParagraph.innerHTML=  `<p class="h7 mt-3 ">A project I did not explicitly enjoy doing, but was proud of the end result 
+                                    <br>was my WEBD-3201 website. It was a painful journey but it ended up working exactly how I had
+                                    <br>wanted, and looked in my opinion quite stunning, unfortunately I have no pictures of the end result/p>`;
+                
         // Insert new element into the reference point
-        MainContent.appendChild(MainParagraph);        
+        MainContent.appendChild(MainParagraph);  
+        MainContent.appendChild(FirstPicture);     
+        MainContent.appendChild(FirstParagraph);  
+        MainContent.appendChild(SecondParagraph); 
+        MainContent.appendChild(ThirdParagraph);  
     }
 
     function DisplayServicesPage()
