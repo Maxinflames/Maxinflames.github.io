@@ -101,12 +101,22 @@
 
         // Create HTML Element in memory
         let MainParagraph = document.createElement("p");
+        let FirstParagraph = document.createElement("p");
+        let Pictures = document.createElement("div");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
-       
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Meet the Programmer!</a>`
+        Pictures.innerHTML = `<img src="./Images/Me1.jpg" alt="Solo Picture"  width="300" height="400">  <img src="./Images/Me2.jpg" alt="Picture with Little Sister"  width="300" height="400">`;
+        FirstParagraph.innerHTML=  `<p class="h7 mt-3 ">-------------------------------------------------------------------------------------------------<br>
+                                    Maximus Vanhaarlem, 20 years old, currently enrolled at Durham College in Computer Programming for IT
+                                    <br>Taught in C++, C#, Java, JavaScript, SQL, PHP, HTML, Python, COBOL. Looking to make a name for himself
+                                    <br>the world, and enjoy his life.
+                                    <br><a href="./DownloadItems/MVResume.pdf" download><img src="./Images/PDFPicture.png" alt="Resume" width="60" height="60"></a></p>`;
+
         // Insert new element into the reference point
-        MainContent.appendChild(MainParagraph);
+        MainContent.appendChild(MainParagraph);    
+        MainContent.appendChild(Pictures);
+        MainContent.appendChild(FirstParagraph);  
     }
     function DisplayContactPage()
     {
