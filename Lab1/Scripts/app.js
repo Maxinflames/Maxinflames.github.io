@@ -11,20 +11,63 @@
             location.href = "about.html";
         });
 
-        let MainContent = document.getElementsByTagName("main");
-        console.log(MainContent);
+        // Create reference to entry point for insertion/deletion
+        let MainContent = document.getElementsByTagName("main")[0];
+
+        // Create HTML Element in memory
+        let MainParagraph = document.createElement("p");
+
+        // Configure the created Element
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+       
+        // Insert new element into the reference point
+        MainContent.appendChild(MainParagraph);
     }
     function DisplayProducts()
     {
         console.log("Products Page");
+        // Create reference to entry point for insertion/deletion
+        let MainContent = document.getElementsByTagName("main")[0];
+
+        // Create HTML Element in memory
+        let MainParagraph = document.createElement("p");
+
+        // Configure the created Element
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+       
+        // Insert new element into the reference point
+        MainContent.appendChild(MainParagraph);        
     }
+    
     function DisplayServicesPage()
     {
         console.log("Services Page");
+        // Create reference to entry point for insertion/deletion
+        let MainContent = document.getElementsByTagName("main")[0];
+
+        // Create HTML Element in memory
+        let MainParagraph = document.createElement("p");
+
+        // Configure the created Element
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+       
+        // Insert new element into the reference point
+        MainContent.appendChild(MainParagraph);
     }
     function DisplayAboutPage()
     {
         console.log("About Page");
+        // Create reference to entry point for insertion/deletion
+        let MainContent = document.getElementsByTagName("main")[0];
+
+        // Create HTML Element in memory
+        let MainParagraph = document.createElement("p");
+
+        // Configure the created Element
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="text-light h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+       
+        // Insert new element into the reference point
+        MainContent.appendChild(MainParagraph);
     }
     function DisplayContactPage()
     {
@@ -189,6 +232,12 @@
 
     function Start()
     {
+        let NavContent = document.getElementsByTagName("ul")[0];
+        console.log(NavContent);
+        let HumanResourceLink = document.createElement("li");
+        HumanResourceLink.innerHTML = `<a class="nav-link"><i class="fas fa-user"></i> Human Resources</a>`
+        NavContent.lastElementChild.before(HumanResourceLink);
+        NavContent.childNodes[3].innerHTML=`<a class="nav-link" href="products.html"><i class="fas fa-boxes"></i> Projects</a>`
         console.log("App Started!");
         switch(document.title)
         {
