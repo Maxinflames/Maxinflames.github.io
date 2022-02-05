@@ -67,14 +67,31 @@
         // Create reference to entry point for insertion/deletion
         let MainContent = document.getElementsByTagName("main")[0];
 
-        // Create HTML Element in memory
-        let MainParagraph = document.createElement("p");
+       // Create HTML Element in memory
+       let MainParagraph = document.createElement("p");
+       let FirstParagraph = document.createElement("p");
+       let SecondParagraph = document.createElement("p");
+       let ThirdParagraph = document.createElement("p");
 
-        // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
-       
-        // Insert new element into the reference point
-        MainContent.appendChild(MainParagraph);
+       // Configure the created Element
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> These are the 3 best things that set us apart from many.</a>`
+        FirstParagraph.innerHTML=  `<p class="h7 mt-3 ">-------------------------------------------------------------------------------------------------<br>
+                                    Our programmers are skilled with many different types of programming languages, some of which
+                                    <br>being, C++, C#, Java, JavaScript, SQL, PHP, HTML, Python, COBOL. As such we are skilled in
+                                    <br>many different regions of programming and give you the best options for what you are looking for.</p>`;
+        SecondParagraph.innerHTML=  `<p class="h7 mt-3 ">-------------------------------------------------------------------------------------------------<br>
+                                    We look to give a one on one experience with any clients we accumulate, and strive to give you 
+                                    <br>what your looking for in your website. Whether it be design or functionality, I am certain 
+                                    <br>we will give you what your looking for through our personal touch and details.</p>`;
+        ThirdParagraph.innerHTML=  `<p class="h7 mt-3 ">-------------------------------------------------------------------------------------------------<br>
+                                    We are very detail oriented, and find ourselves unable to sleep with details on our minds,
+                                    <br>and as such, we can assure you that you will get the best product we can come up with.</p>`;
+               
+       // Insert new element into the reference point
+       MainContent.appendChild(MainParagraph);    
+       MainContent.appendChild(FirstParagraph);  
+       MainContent.appendChild(SecondParagraph); 
+       MainContent.appendChild(ThirdParagraph);  
     }
     function DisplayAboutPage()
     {
