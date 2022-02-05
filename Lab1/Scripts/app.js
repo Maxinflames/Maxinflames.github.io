@@ -26,6 +26,8 @@
     function DisplayProducts()
     {
         console.log("Products Page");
+        document.getElementById("PageTitle").innerHTML = `<i class="fas fa-hat-wizard"></i> Previous Projects`;
+
         // Create reference to entry point for insertion/deletion
         let MainContent = document.getElementsByTagName("main")[0];
         console.log(MainContent);
@@ -34,7 +36,7 @@
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> This site displays my favourite projects that I have worked on.<br></a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> This site displays my favourite projects that I have worked on.</a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);        
