@@ -18,7 +18,7 @@
         let MainParagraph = document.createElement("p");
 
         // Configure the created Element
-        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 "> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
+        MainParagraph.innerHTML = `<p id="MainParagraph" class="h5 mt-3 text-light"> Welcome to my Lab 1 site.<br>Enjoy your stay!</a>`
        
         // Insert new element into the reference point
         MainContent.appendChild(MainParagraph);
