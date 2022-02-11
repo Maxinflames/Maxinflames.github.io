@@ -193,7 +193,7 @@
     function ContactFormValidation()
     {
         ValidateField("fullName",/^([A-Z][a-z]{1,3}.?\s)?([A-Z][a-z]{1,})((\s|,|-)([A-Z][a-z]{1,}))*(\s|,|-)([A-Z][a-z]{1,})$/,"Please enter a valid Full Name. This must include at least a Capitalized First Name and a Capitalized Last Name.");
-        ValidateField("contactNumber",/(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/g, "Please enter a valid Contact Number. Example: (416) 555-5555");
+        ValidateField("contactNumber",/(\+\d{1,3}[\s-.])?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/, "Please enter a valid Contact Number. Example: (416) 555-5555");
         ValidateField("emailAddress",/[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}/,"Please enter a valid Email Address. Example: Example_Email@hotmail.com");
     }
 
