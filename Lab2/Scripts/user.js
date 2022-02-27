@@ -39,7 +39,10 @@
         // Constructors
         constructor(displayName = "", emailAddress = "", username = "", password = "")
         {
-
+            this.DisplayName = displayName;
+            this.EmailAddress = emailAddress;
+            this.Username = username;
+            this.Password = password;
         }
 
         // Method overrides

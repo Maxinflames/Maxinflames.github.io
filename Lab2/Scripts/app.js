@@ -1,3 +1,12 @@
+/**
+ * @description This lab was made to practice and reinforce the use of the jQuery 
+ * JavaScript library as well as JavaScript form Validation
+ * @author Maximus Vanhaarlem (100758975)
+ * @since 2/27/2022
+ * 
+*/ 
+
+
 // IIFE -- Immediately Invoked Function Expression
 // AKA -- Anonymous Self-Executing Function
 (function()
@@ -93,7 +102,6 @@
         {
             if(subscribeCheckbox.checked)
             {
-                
                 AddContact(fullName.value, contactNumber.value, emailAddress.value);
             }
         });
@@ -205,6 +213,10 @@
         }
     }
 
+    /**
+     * Computes data for the register.html page
+     * Calls any nessessary functions for logic within
+     */
     function DisplayRegisterPage()
     {
         console.log("Register Page");
@@ -213,31 +225,37 @@
         let MainContent = $("#contentArea");
         let ErrorDiv = document.createElement("div");
         ErrorDiv.setAttribute("id", "ErrorMessage");
-        ErrorDiv.setAttribute("class","alert alert-danger");
         ErrorDiv.style.display= "none";
         MainContent.prepend(ErrorDiv);
 
         RegisterFormValidation();
         $("#submitButton").on("click", function()
         {
-            event.preventDefault();
+            event.preventDefault(); // Prevents default in order to display newUser information in console
 
-            let success = false;
-
-            // Create an empty user object
-            //let newUser = new core.User();
-
-            RegisterFormValidation();
+            ConfirmPassword(); // Calls ConfirmPassword() function after button press
             let messageArea = $("#ErrorMessage");
-            if(messageArea.text(ErrorMessage)== "")
-            {
-                ConfirmPassword();
-                console.log("Here");
+            
+            if(messageArea.text() == "") // If there is not an active error message
+            {   
+/*                 
+                newUser.DisplayName= $("#firstName").val() + " " + $("#lastName").val();
+                newUser.EmailAddress = $("#emailAddress").val();
+                newUser.Username= ($("#firstName").val()+$("#lastName").val()).toLowerCase();
+                newUser.Password = $("#password").val(); 
+*/
+                // Creates user, and assigns the information to it
+                let newUser = new core.User($("#firstName").val()+" "+$("#lastName").val(), $("#emailAddress").val(),
+                 ($("#firstName").val()+$("#lastName").val()).toLowerCase() , $("#password").val());
+                console.log(newUser.serialize()); // Output newUser to console
             }
         });
     }
 
-    
+    /**
+     * Computes data for the login.html page
+     * Calls any nessessary functions for logic within
+     */
     function DisplayLoginPage()
     {
         console.log("Login Page");
@@ -382,6 +400,14 @@
         ValidateContactField("emailAddress",/[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}/,"Please enter a valid Email Address. Example: Example_Email@hotmail.com");
     }
 
+    /**
+     * This method validates a given field from the Register page's form, 
+     * and displays an error in the message area div element.
+     *
+     * @param {string} fieldID
+     * @param {RegExp} regularExpression
+     * @param {string} errorMessage
+     */
     function ValidateRegisterField(fieldID, regularExpression, errorMessage)
     {
         let messageArea = $("#ErrorMessage").hide();
@@ -395,41 +421,54 @@
                 // doesn't pass RegEx test
                 $("#" + fieldID).trigger("focus"); // go back to the FieldID text box
                 $("#" + fieldID).trigger("select"); // select all the Text in the FieldID text box
+                messageArea.addClass("alert alert-danger"); // add the alert to the div element
+                messageArea.text(errorMessage);
+                messageArea.show();
             }
             else
             {
-                // does pass RegEx test
+                // Does pass RegEx test
+                messageArea.removeAttr("class");
+                messageArea.text("");
                 messageArea.hide();
             }
         });
     }
     /**
-     * 
+     * Confirms the users password by checking if both instances of password
+     * are equal in value
      */
     function ConfirmPassword()
     {
         let messageArea = $("#ErrorMessage").show();
         // Checks if the passwords values are not equal
-        if ($("#password").value != $("#confirmPassword").value)
+    
+        if ($("#password").val() != $("#confirmPassword").val())
         {
             $("#password").trigger("focus"); // go back to the FieldID text box
             $("#password").trigger("select"); // select all the Text in the FieldID text box
+            messageArea.addClass("alert alert-danger"); // add the alert to the div element
             messageArea.text("Passwords do not match. Please try again.");
+            messageArea.show();
         }
         else
         {
+            // Does pass RegEx test
+            messageArea.removeAttr("class");
             messageArea.hide();
         }
-        
-        console.log("did");
     }
 
+    /**
+     * Calls ValidateRegisterField for each field within the page 
+     */
     function RegisterFormValidation()
     {
         ValidateRegisterField("firstName",/^([A-Z][a-z]{1,})$/,"Please enter a valid First Name. A valid First name begins with a capital, and has at least 2 characters.");
         ValidateRegisterField("lastName",/([A-Z][a-z]{1,})$/,"Please enter a valid Last Name. A valid Last name begins with a capital, and has at least 2 characters.");
         ValidateRegisterField("emailAddress",/[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}/,"Please enter a valid Email Address. Example: Example_Email@hotmail.com");
         ValidateRegisterField("password",/[a-zA-Z0-9.-/!@#$%^&*(){}\[\]\\,.';|":><?\`~\s_+-=]{6,}/,"Please enter a valid Password. Valid Passwords have a minimum of 6 characters.");
+        ValidateRegisterField("confirmPassword",/[a-zA-Z0-9.-/!@#$%^&*(){}\[\]\\,.';|":><?\`~\s_+-=]{6,}/,"Please enter a valid Password. Valid Passwords have a minimum of 6 characters.");
     }
 
     function Start()
